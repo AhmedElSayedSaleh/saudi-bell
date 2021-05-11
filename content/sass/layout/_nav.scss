@@ -1,0 +1,255 @@
+/*
+**  define styling for element component with specified with classe nav.
+*/
+.main-nav {
+  position: absolute;
+  width: 100%;
+  text-transform: uppercase;
+  padding-top: 1.6rem;
+  z-index: 999;
+  transition: 0.3s;
+
+  a {
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+  .logo {
+    &__img {
+      width: 200px;
+      max-width: 300px;
+      @include rwd-df-down(xs) {
+        width: 180px;
+      }
+      @include rwd-only(xxs) {
+        width: 150px;
+      }
+    }
+  }
+
+  &__toggler {
+    border: none;
+    color: $color-primary-2 !important;
+    &:focus {
+      box-shadow: none;
+    }
+    @include rwd-df-down(md) {
+      display: inline-block;
+    }
+  }
+
+  &__container {
+    width: 90%;
+    $start: 5%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+  }
+
+  &__content {
+    transition: all 0.3s ease-in-out;
+    @include rwd-df-down(md) {
+      background-color: $color-white;
+      height: 100%;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      overflow-y: scroll;
+      #{$start}: -100%;
+      &-toggle {
+        #{$start}: 0%;
+      }
+    }
+    &-relative {
+      @include rwd-df-down(md) {
+        position: relative;
+        height: 100%;
+        padding-#{$start}: 2rem;
+      }
+    }
+
+    .close-btn {
+      display: none;
+      i {
+        color: $color-primary-2;
+        padding-top: 2.5rem;
+        padding-#{$end}: 2.5rem;
+        padding-bottom: 0px;
+        padding-#{$start}: 0px;
+        font-size: 2rem;
+        cursor: pointer;
+      }
+      @include rwd-df-down(md) {
+        display: block;
+        text-align: $end;
+      }
+    }
+  }
+
+  &__btns {
+    .logo-md {
+      display: none;
+      @include rwd-df-down(md) {
+        display: inline-block;
+      }
+    }
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 0.5rem;
+    padding-bottom: 1.1rem;
+    @include rwd-df-down(md) {
+      display: block;
+    }
+
+    li {
+      padding-#{$start}: 1rem;
+      @include rwd-df-down(md) {
+        margin: 0.7rem auto;
+      }
+      a {
+        background-color: $color-white;
+        color: $color-secondary-4;
+        border-radius: 4px;
+        padding: 5px 10px;
+        transition: 0.3s;
+        &:hover,
+        &.active {
+          background-color: $color-primary-2;
+          color: $color-white;
+        }
+        @include rwd-df-down(md) {
+          background-color: $color-primary-2;
+          color: $color-white;
+        }
+      }
+    }
+    .lang-li {
+      @include rwd-df-down(md) {
+        position: absolute;
+        bottom: 1%;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 0.5rem;
+    .nav-item {
+      position: relative;
+      .nav-link {
+        color: $color-white !important;
+        transition: 0.3s;
+        font-size: 1.4rem;
+        padding-#{$end}: 0 !important;
+        margin-#{$start}: 0.5rem !important;
+        line-height: 1.5;
+        text-align: center;
+        @include rwd-df-down(lg) {
+          font-size: 1.3rem;
+        }
+        @include rwd-df-down(md) {
+          color: $color-primary-2 !important;
+        }
+        &:hover {
+          color: $color-primary-2 !important;
+        }
+        &.side-line {
+          margin-#{$end}: 0.5rem;
+        }
+        &.side-line::after {
+          content: "";
+          width: 2px;
+          height: 45%;
+          background-color: $color-white;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          margin-#{$start}: 0.7rem !important;
+          @include rwd-df-down(lg) {
+            top: 40%;
+          }
+        }
+      }
+
+      .dropdown-menu {
+        background-color: $color-primary-2;
+        width: 200px;
+        transition: 0.3s;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        li {
+          position: relative;
+          &::after {
+            content: "";
+            position: absolute;
+            left: 5%;
+            bottom: 0;
+            background: $color-white;
+            height: 1px;
+            width: 90%;
+          }
+        }
+
+        .dropdown-item {
+          color: $color-white;
+          text-align: center;
+          text-transform: uppercase;
+          font-size: 1.2rem;
+          transition: 0.3s;
+          &:hover {
+            background-color: $color-primary-2;
+            color: $color-secondary-3;
+          }
+        }
+      }
+    }
+  }
+
+  /*
+  **  navbar items dropdown on hover not click
+  */
+  .nav-item {
+    .dropdown-menu {
+      @include rwd-mf-up(lg) {
+        display: none;
+      }
+    }
+
+    &:hover .dropdown-menu {
+      display: block;
+    }
+  }
+
+  // ### start ########################### navbar fixed  ################################
+  &.navbar-fixed--top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-width: 100%;
+    background-color: $color-white;
+    box-shadow: 0 1px 6px 0 #20212447;
+    padding-top: 0.5rem;
+    padding-bottom: 0;
+    .main-nav__btns {
+      li {
+        a {
+          background-color: $color-primary-2;
+          color: $color-white;
+          &:hover {
+            color: $color-secondary-4;
+          }
+        }
+      }
+    }
+    .main-nav__list {
+      .nav-link {
+        color: $color-primary-2 !important;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  // ### end ##############################################################################
+}

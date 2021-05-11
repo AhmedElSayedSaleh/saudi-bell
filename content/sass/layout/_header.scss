@@ -1,0 +1,92 @@
+/*
+**  define styling for element component with specified with classe contact-header.
+*/
+.img-flip {
+  transform: scaleX(-1);
+}
+
+.header {
+  .main-section {
+    position: relative;
+    &__item {
+      height: 80vh;
+      @include rwd-df-down(xs) {
+        height: 70vh;
+      }
+      img {
+        height: 100%;
+      }
+
+      &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        $start: 0;
+        background-color: $color-slider-overlay;
+        z-index: 1;
+      }
+    }
+
+    &__content {
+      position: absolute;
+      top: 50%;
+      #{$start}: 0%;
+      transform: translateY(-50%);
+      width: 100%;
+      z-index: 2;
+      @include rwd-df-down(lg) {
+        #{$start}: 7%;
+      }
+
+      h3 {
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: 3rem;
+        line-height: 1.7;
+        font-weight: 400;
+        width: 40%;
+        text-shadow: 1px 1px 5px $color-black;
+        margin-bottom: 40px;
+        @include rwd-df-down(lg) {
+          font-size: 2.5rem;
+        }
+        @include rwd-df-down(md) {
+          font-size: 2rem;
+          line-height: 1.5;
+        }
+        @include rwd-df-down(xs) {
+          width: 60%;
+          font-size: 1.7rem;
+          line-height: 1.7;
+        }
+      }
+    }
+
+    .owl-dots {
+      position: absolute;
+      left: 50%;
+      bottom: 1rem;
+      transform: translateX(-50%);
+    }
+
+    .owl-dot {
+      margin-#{$end}: 3px;
+      margin-#{$start}: 3px;
+      span {
+        width: 1rem;
+        height: 1rem;
+        margin: 0;
+        border-radius: 0;
+        background: $color-white;
+        opacity: 0.5;
+        transition: opacity 0.6s ease;
+      }
+      &.active {
+        background: $color-white;
+        opacity: 1;
+      }
+    }
+  }
+}

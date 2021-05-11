@@ -1,0 +1,509 @@
+/********** defines main layout of all pages *****************/
+
+/* ******************** HOME PAGE *********************/
+
+//========== START MISSION SECTION ==========//
+
+// .mission { padding: 20px 0}
+.mission_card {
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  height: 365px;
+  // margin-bottom: 20px;
+  font-family: $main-font;
+  overflow: hidden;
+  &:hover {
+    .mission_content {
+      top: 53%;
+    }
+  }
+  @include rwd-df-down(md) {
+    height: 265px;
+  }
+}
+
+.mission_header {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  color: $color-header;
+  font-size: 4vw;
+  font-weight: bold;
+  text-transform: uppercase;
+  @include rwd-df-down(sm) {
+    font-size: 3.5rem;
+  }
+}
+
+.mission_content {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  height: 50%;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  color: $color-white;
+  background-color: $color-primary-1;
+  transition: all 0.3s ease;
+  line-height: 25px;
+  &:last-child {
+    display: flex;
+    justify-content: space-around;
+    ul {
+      text-align: left;
+      padding: 0;
+    }
+  }
+  p {
+    margin: 0;
+    overflow-y: auto;
+  }
+  @media (min-width: 767.98px) and (max-width: 991.9px) {
+    font-size: 1.5vw;
+  }
+}
+
+//========== END MISSION SECTION ==========//
+
+//========== START SERVICES SECTION ==========//
+
+.services_card {
+  background-size: cover;
+  background-position: top;
+  height: 300px;
+  padding: 30px 15px;
+  color: $color-white;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: #00adefbf;
+    background-blend-mode: color-dodge;
+  }
+}
+
+.services-card_header {
+  min-height: 25%;
+  font-size: 2vw;
+  text-transform: uppercase;
+  @include rwd-df-down(sm) {
+    font-size: 2.3rem;
+  }
+}
+
+.services-card_content {
+  min-height: 40%;
+  font-size: 1.5vw;
+  p {
+    line-height: 25px;
+  }
+  @include rwd-df-down(sm) {
+    font-size: 2.1rem;
+  }
+}
+
+.services-card_button {
+  padding: 7px 10px;
+  background-color: $color-primary-2;
+  color: $color-white;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  font-size: 1.5rem;
+  &:hover {
+    color: white;
+  }
+}
+//========== END SERVICES SECTION ==========//
+
+//========== START MARKETS SECTION ==========//
+
+.section--markets {
+  margin-bottom: -1.5rem;
+}
+
+.markets_link {
+  text-decoration: none;
+}
+
+.markets_card {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    .markets-card_img {
+      opacity: 1;
+    }
+  }
+  @include rwd-df-down(lg) {
+    width: 250px;
+    height: 250px;
+  }
+  @include rwd-df-down(md) {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.markets-card_header {
+  text-transform: uppercase;
+  color: $color-white;
+  font-size: 3.5rem;
+  text-align: center;
+  z-index: 2;
+  @include rwd-df-down(lg) {
+    font-size: 3rem;
+  }
+  @include rwd-df-down(md) {
+    font-size: 2rem;
+  }
+}
+
+.markets-card_img {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+//========== END MARKETS SECTION ==========//
+
+//========== START PARTNERS SECTION ==========//
+
+.section--partners {
+  .owl-dots {
+    display: none;
+  }
+}
+
+.partners_content {
+  width: 70%;
+  margin: 0 auto 2rem;
+  display: block;
+  color: $color-text;
+  text-align: justify;
+  @include rwd-df-down(xs) {
+    text-align: center;
+  }
+}
+
+.partners_collections {
+  width: 85%;
+  margin: auto;
+}
+
+.partners_card {
+  display: flex;
+  width: 100% !important;
+  height: 150px;
+  margin: 10px auto;
+  background-color: white;
+  border: 1px solid black;
+  img {
+    width: 100px !important;
+    margin: auto;
+  }
+}
+
+//========== END PARTNERS SECTION ==========//
+
+/********************* ABOUT US PAGE ********************/
+
+//=============== START WHO WE ARE SECTION ===============//
+
+.who_content {
+  width: 80%;
+  margin: 0 auto 20px;
+  // text-align: justify;
+  color: $color-text;
+  // @include rwd-df-down(sm) { text-align: center; }
+}
+
+//=============== END WHO WE ARE SECTION ===============//
+
+//=============== START Why Saudi Bell SECTION ===============//
+.section--why-saudi-bell {
+  &__info {
+    @include rwd-df-down(sm) {
+      padding: 0 1.5rem;
+    }
+    @include rwd-df-down(xxs) {
+      padding: 0 0.7rem;
+    }
+  }
+
+  &__text {
+    color: $color-white;
+    font-size: 1.7rem;
+    font-weight: 100;
+    word-spacing: 0.3rem;
+    line-height: 2.2rem;
+
+    @include rwd-df-down(sm) {
+      font-size: 1.5rem;
+    }
+    @include rwd-df-down(xxs) {
+      font-size: 1.3rem;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  .animated-logo {
+    position: relative;
+    padding-top: 1px;
+    @include rwd-df-down(sm) {
+      padding: 2rem 0;
+    }
+    @include rwd-df-down(xxs) {
+      padding: 1rem 0;
+    }
+
+    &::before {
+      content: "";
+      width: 50%;
+      height: 3px;
+      background-color: #1881c5;
+      position: absolute;
+      z-index: 5;
+      top: 0;
+      #{$start}: 0;
+
+      @include rwd-df-down(sm) {
+        display: none;
+      }
+    }
+  }
+}
+//=============== End Why Saudi Bell SECTION ===============//
+
+//=============== START timeline  SECTION ===============//
+.section--timeline {
+  overflow-x: hidden;
+}
+//=============== End timeline SECTION ===============//
+
+//=============== START Founders Messages SECTION ===============//
+.section--founders {
+  &__text {
+    font-size: $default-font-size;
+    line-height: 1.5;
+    color: $color-text;
+    padding: 0 1rem;
+    margin: 2rem 0;
+  }
+
+  &__img-container {
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    margin: 0 auto;
+    background-image: url("../img/founders-messages/Picture3.png");
+    background-size: contain;
+    position: relative;
+  }
+
+  &__img {
+    display: block;
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 18%;
+    left: 15%;
+    transform: translate(-50% -50%);
+  }
+}
+//=============== END WHO WE ARE SECTION ===============//
+
+//=============== START SUCCESS STORIES SECTION ===============//
+
+.stories-card_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  // padding: 30px; margin-bottom: 30px;
+  border: 1px solid black;
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.stories-card_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  min-height: 50px;
+  // margin-bottom: 30px;
+  color: $color-header;
+  @include rwd-df-down(lg) {
+    font-size: 1.7rem;
+  }
+}
+
+.stories-card_content {
+  margin-bottom: 20px;
+  &:first-of-type {
+    height: 300px;
+    overflow-x: auto;
+    @include rwd-df-down(sm) {
+      height: auto;
+    }
+  }
+  &:not(:first-of-type) {
+    display: none;
+  }
+}
+
+.stories-card_subheader {
+  font-size: 1.7rem;
+  text-align: center;
+  margin-bottom: 10px;
+  color: $color-primary-1;
+  @include rwd-df-down(lg) {
+    font-size: 1.5rem;
+  }
+}
+
+.stories-card_description {
+  text-align: justify;
+  color: $color-text;
+  @include rwd-df-down(md) {
+    // text-align: center;
+  }
+}
+
+.stories-card_button {
+  display: block;
+  padding: 5px 20px;
+  margin: auto;
+  color: white;
+  background-color: $color-primary-1;
+  border: none;
+}
+
+//=============== END SUCCESS STORIES SECTION ===============//
+
+/******************** CLIENTS PAGE ********************/
+
+/*=============== START CLIENTS SECTION ===============*/
+
+.section--clients {
+  text-align: center;
+
+  .clients_img {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: 2rem auto 0;
+    @include rwd-only(md) {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  .clients_name {
+    width: 150px;
+    margin: auto;
+    margin-top: 1rem;
+    padding: 0 8%;
+    font-size: 14px;
+    text-transform: uppercase;
+    @include rwd-only(md) {
+      width: 120px;
+    }
+  }
+}
+/*=============== END CLIENTS SECTION ===============*/
+
+.section--careers {
+  &__text {
+    color: $color-secondary-5;
+    font-size: 1.7rem;
+    font-weight: 100;
+  }
+
+  .form {
+    &__submit-btn {
+      font-size: 2.6rem;
+      @include rwd-df-down(md) {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+.section--contact-us {
+  &__text {
+    color: $color-secondary-5;
+    font-size: 1.7rem;
+    font-weight: 100;
+  }
+
+  &__email {
+    font-size: 2.2rem;
+    padding: 2rem;
+
+    &__svg,
+    &__icon {
+      color: $color-primary-1;
+      font-size: 3.5rem;
+    }
+
+    &__link {
+      text-decoration: none;
+      margin-#{$start}: 1rem;
+      color: $color-text;
+      transition: all 0.3s;
+
+      &:hover {
+        text-decoration: underline;
+        color: $color-primary-1;
+      }
+    }
+  }
+
+  .form {
+    &__label {
+      font-size: $default-font-size;
+      @include rwd-df-down(md) {
+        font-size: 1.3rem;
+      }
+      @include rwd-df-down(sm) {
+        font-size: 1.1rem;
+      }
+      @include rwd-df-down(xs) {
+        font-size: 1.3rem;
+        height: auto;
+      }
+    }
+
+    &__submit-btn {
+      font-size: 2.6rem;
+      @include rwd-df-down(md) {
+        font-size: 2rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,166 @@
+/*
+**  define styling for element components with specified with classe footer.
+*/
+.footer{
+
+    background-color: $color-secondary-1;
+    color: $color-white;
+    font-size: inherit;
+
+    padding-top: 5rem;
+    @include rwd-df-down(lg){ padding-top: 4rem; }
+    @include rwd-df-down(md){ padding-top: 3rem; }
+    @include rwd-df-down(sm){ padding-top: 2.5rem; }
+    @include rwd-df-down(xs){ padding-top: 2rem; }
+
+
+
+
+    .main-footer{
+
+        &__item{
+
+        } 
+
+        &__item--logos{
+            @include rwd-only(xs){ width: 75%;  margin: 0 auto}
+        }
+
+        &__logo-link{
+            display: block;
+            width: 80%;
+            margin: 0 auto;
+
+            &__img{
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+        }
+
+
+        &__contact__logos{
+            img{
+                width: calc(90% / 5);
+                height: auto;
+                display: block;
+            }
+        }
+
+
+        &__item--certficate{
+
+            .col-6{
+              @include rwd-only(xxs){ 
+                  width: 100%; 
+
+                  &:not(:last-child){
+                      margin-bottom: 2rem;
+                  }
+              }
+            }
+
+        }
+
+        &__list{
+
+            &__item{
+
+
+            }
+
+
+            &__heading{
+                font-weight: 700;
+                font-size: 1.5rem;
+                margin-bottom: .8rem;
+            }
+
+            &__link{
+                font-size: 1.2rem;
+                font-weight: inherit;
+                text-decoration: none;
+                color: inherit;
+                cursor: pointer;
+
+                &:hover{ text-decoration: underline; }
+            }
+
+            @include rwd-only(xs){ width: 75%;  margin: 0 auto}
+
+        }
+
+
+
+        &__partner-link{
+            display: block;
+            width: 100%;
+        }
+
+        &__partner-img{
+            display: block;
+            margin: 0 auto ;
+            width: 90%;
+            height: auto;
+            @include rwd-only(xs){ width: 50%; }
+        }
+
+    }
+
+
+
+    .sub-footer{
+        margin-top: 3rem;
+        padding: 1rem 0;
+        background-color: $color-secondary-2 ;
+
+        &__social-list{
+
+            &__item{
+                &:not(:last-child){ margin-#{$end}: .8rem ; }
+            }
+
+            &__link{
+                text-decoration: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                width: 3rem;
+                height: 3rem;
+                border-radius: 50%;
+                background-color: $color-third-4;
+                cursor: pointer; 
+
+                &:hover i{ transform: rotate(360deg);  }
+                
+            }
+
+            &__icon{ 
+                color: $color-secondary-1; 
+                transition: .5s transform ; 
+            }
+
+        }
+
+
+        &__copyright{
+            &__sentences{
+                text-transform: uppercase;
+                font-size: 1rem;
+                font-weight: inherit;
+                color: inherit;
+                margin-bottom: 0 ; 
+            }
+
+            &__link{
+                text-decoration: none;
+                color: $color-primary-3 ;
+                transition: color .2s;
+                &:hover{ color: $color-primary-4;  text-decoration: underline;}
+            }
+        }
+
+    }
+
+}

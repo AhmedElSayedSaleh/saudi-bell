@@ -1,0 +1,34 @@
+/*
+**  direction setting variables 
+*/
+$start: left;
+$end: right;
+
+/*
+**  font family setting variables 
+*/
+$main-font: "Helvetica Neue", "HelveticaNeue-Light", "Helvetica Neue Light",
+  Helvetica, Arial, "Lucida Grande", sans-serif;
+
+/*******************************  import All used scss files   ******************************/
+
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/rwd";
+@import "abstracts/fonts";
+
+@import "base/base";
+@import "base/typography";
+
+@import "components/animated-circle";
+@import "components/service-circle";
+@import "components/timeline";
+@import "components/map";
+@import "components/form";
+
+@import "layout/header";
+@import "layout/nav";
+@import "layout/footer";
+
+@import "pages/main";

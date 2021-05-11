@@ -1,0 +1,38 @@
+/*
+**  direction setting variables 
+*/
+$start: right;
+$end: left;
+
+/*
+**  font family setting variables 
+*/
+// $main-font: "Arial", "sans-serif";
+
+$main-font: system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue",
+  "Arial", "sans-serif";
+
+// $main-font: "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif";
+
+/*******************************  import All used scss files   ******************************/
+
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/rwd";
+@import "abstracts/fonts";
+
+@import "base/base";
+@import "base/typography";
+
+@import "components/animated-circle";
+@import "components/service-circle";
+@import "components/timeline";
+@import "components/map";
+@import "components/form";
+
+@import "layout/header";
+@import "layout/nav";
+@import "layout/footer";
+
+@import "pages/main";
